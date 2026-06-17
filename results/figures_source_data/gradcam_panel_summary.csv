@@ -1,0 +1,5 @@
+split,panel,available_classes,shown_classes,shown_images,missing_classes,gradcam_threshold,gradcam_alpha,gradcam_gamma,source_note
+val,correct,21,21,21,,0.05,0.46,0.7,/mnt/e/Ringworm detection project/DFAN-main/training_data_deduped_splits/seed42/val
+val,wrong,18,14,14,Dog_normal; Eye Infection in Dog; Mange in Dog; Ringworm in Cat; Skin Allergy in Cat; Tick Infestation in Dog; scabies cattle,0.05,0.46,0.7,/mnt/e/Ringworm detection project/DFAN-main/training_data_deduped_splits/seed42/val
+development_external,correct,10,10,10,,0.05,0.46,0.7,saved_predictions
+development_external,wrong,10,10,10,,0.05,0.46,0.7,saved_predictions

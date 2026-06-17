@@ -1,0 +1,3 @@
+# Git LFS is not enabled for this initial private upload.
+# Included checkpoints and TFLite artifacts are below GitHub's 100 MB hard file limit.
+# If this repository becomes public long term, move model weights and deployment binaries to Git LFS or GitHub release assets.

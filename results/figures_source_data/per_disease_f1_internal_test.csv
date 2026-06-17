@@ -1,0 +1,22 @@
+split,model,disease,f1,ci_low,ci_high,support
+internal_test,VetDerm-Mobile,Cat_normal,0.9894736842105263,0.9735449735449735,1.0,95
+internal_test,VetDerm-Mobile,Ringworm in Cat,0.9736842105263158,0.9473684210526315,0.9940828402366864,76
+internal_test,VetDerm-Mobile,Skin Allergy in Cat,0.9801324503311258,0.954248366013072,1.0,75
+internal_test,VetDerm-Mobile,scabies cat,0.9875,0.9672933133945738,1.0,80
+internal_test,VetDerm-Mobile,Ear Mites in Cat,0.9850746268656716,0.9606299212598425,1.0,68
+internal_test,VetDerm-Mobile,Eye Infection in Cat,0.9934640522875817,0.9780815347721823,1.0,76
+internal_test,VetDerm-Mobile,Dog_normal,0.9552238805970149,0.9204545454545454,0.9830446059752153,97
+internal_test,VetDerm-Mobile,Dermatitis in Dog,0.946058091286307,0.915589519650655,0.9724081662254778,118
+internal_test,VetDerm-Mobile,Fungal Infection in Dog,0.9536423841059603,0.9279407401913521,0.9745344528083382,153
+internal_test,VetDerm-Mobile,Hot Spots in Dog,0.9324324324324325,0.8888888888888888,0.971271676300578,77
+internal_test,VetDerm-Mobile,Mange in Dog,0.9855072463768116,0.9733656174334141,0.9952624839948784,207
+internal_test,VetDerm-Mobile,Ringworm in Dog,0.9642857142857143,0.9413321317384893,0.9831008379356313,168
+internal_test,VetDerm-Mobile,Skin Allergy in Dog,0.9613733905579399,0.9335950413223141,0.9831991525423729,117
+internal_test,VetDerm-Mobile,Tick Infestation in Dog,0.9934640522875817,0.975,1.0,77
+internal_test,VetDerm-Mobile,Eye Infection in Dog,1.0,1.0,1.0,77
+internal_test,VetDerm-Mobile,Normal Skin,0.9554367201426025,0.9357730156072698,0.9734241280477959,276
+internal_test,VetDerm-Mobile,Foot and Mouth disease,0.9817232375979112,0.9648884584648308,0.9942383720930232,190
+internal_test,VetDerm-Mobile,Lumpy Skin,0.9553398058252427,0.9344172193564235,0.9719126440006313,264
+internal_test,VetDerm-Mobile,Ringworm(cow),0.9940828402366864,0.9797219558964525,1.0,85
+internal_test,VetDerm-Mobile,scabies cattle,0.994475138121547,0.9823471400394477,1.0,90
+internal_test,VetDerm-Mobile,papiloma,0.9803921568627451,0.9523809523809523,1.0,76

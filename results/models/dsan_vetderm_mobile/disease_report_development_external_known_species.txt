@@ -1,0 +1,16 @@
+                         precision    recall  f1-score   support
+
+             Cat_normal       0.81      0.78      0.80       111
+      Dermatitis in Dog       0.91      0.90      0.91        96
+             Dog_normal       0.95      0.95      0.95       119
+Fungal Infection in Dog       0.96      0.89      0.93       133
+             Lumpy Skin       0.96      0.59      0.73       227
+            Normal Skin       0.65      0.96      0.78       167
+        Ringworm in Cat       0.74      0.77      0.75       131
+    Skin Allergy in Cat       0.73      0.46      0.56       132
+    Skin Allergy in Dog       0.90      0.93      0.91        85
+            scabies cat       0.83      0.94      0.88       150
+
+              micro avg       0.83      0.80      0.81      1351
+              macro avg       0.84      0.82      0.82      1351
+           weighted avg       0.84      0.80      0.81      1351

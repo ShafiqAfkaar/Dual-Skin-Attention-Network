@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+.venv/
+venv/
+de_env/
+node_modules/
+
+*.log
+~$*
+
+# Raw/private datasets are not part of this GitHub-ready release.
+data/training_data_deduped_splits/
+data/development_external_2026_05_02/
+data/ood_images/
+
+# Avoid committing local render/cache products.
+tmp/
+cache/
+outputs/
+*.jsonl
+
+# Manuscript working drafts are not part of the code release unless deliberately added.
+docs/

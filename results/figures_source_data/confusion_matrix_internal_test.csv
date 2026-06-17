@@ -1,0 +1,22 @@
+,Cat_normal,Ringworm in Cat,Skin Allergy in Cat,scabies cat,Ear Mites in Cat,Eye Infection in Cat,Dog_normal,Dermatitis in Dog,Fungal Infection in Dog,Hot Spots in Dog,Mange in Dog,Ringworm in Dog,Skin Allergy in Dog,Tick Infestation in Dog,Eye Infection in Dog,Normal Skin,Foot and Mouth disease,Lumpy Skin,Ringworm(cow),scabies cattle,papiloma
+Cat_normal,94,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ringworm in Cat,0,74,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Skin Allergy in Cat,0,1,74,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+scabies cat,1,0,0,79,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ear Mites in Cat,0,1,0,1,66,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Eye Infection in Cat,0,0,0,0,0,76,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dog_normal,0,0,0,0,0,0,774,8,10,0,5,0,6,1,0,0,0,0,0,0,0
+Dermatitis in Dog,0,0,0,0,0,0,0,114,1,0,0,3,0,0,0,0,0,0,0,0,0
+Fungal Infection in Dog,0,0,0,0,0,0,1,1,144,1,1,2,3,0,0,0,0,0,0,0,0
+Hot Spots in Dog,0,0,0,0,0,0,5,2,0,69,0,1,0,0,0,0,0,0,0,0,0
+Mange in Dog,0,0,0,0,0,0,1,0,1,1,204,0,0,0,0,0,0,0,0,0,0
+Ringworm in Dog,0,0,0,0,0,0,0,3,2,0,0,162,1,0,0,0,0,0,0,0,0
+Skin Allergy in Dog,0,0,0,0,0,0,8,5,1,0,1,0,112,0,0,0,0,0,0,0,0
+Tick Infestation in Dog,0,0,0,0,0,0,1,0,0,0,0,0,0,76,0,0,0,0,0,0,0
+Eye Infection in Dog,0,0,0,0,0,0,0,0,0,0,0,0,0,0,77,0,0,0,0,0,0
+Normal Skin,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,268,3,5,0,0,0
+Foot and Mouth disease,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,188,0,0,0,0
+Lumpy Skin,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,1,246,0,0,2
+Ringworm(cow),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,84,1,0
+scabies cattle,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,90,0
+papiloma,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,75

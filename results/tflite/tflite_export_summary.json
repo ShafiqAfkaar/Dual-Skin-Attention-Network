@@ -1,0 +1,20 @@
+[
+  {
+    "variant": "fp32",
+    "path": "vetderm_mobile_results/vetderm_mobile_final_single_384_v7/tflite/vetderm_mobile_final_single_384_fp32.tflite",
+    "size_bytes": 29164656,
+    "size_mb": 27.813583374023438
+  },
+  {
+    "variant": "fp16",
+    "path": "vetderm_mobile_results/vetderm_mobile_final_single_384_v7/tflite/vetderm_mobile_final_single_384_fp16.tflite",
+    "size_bytes": 16323888,
+    "size_mb": 15.567672729492188
+  },
+  {
+    "variant": "int8_weightonly",
+    "path": "vetderm_mobile_results/vetderm_mobile_final_single_384_v7/tflite/vetderm_mobile_final_single_384_int8_weightonly.tflite",
+    "size_bytes": 10430944,
+    "size_mb": 9.947723388671875
+  }
+]

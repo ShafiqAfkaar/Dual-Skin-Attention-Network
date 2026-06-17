@@ -1,0 +1,11 @@
+,Cat_normal,Ringworm in Cat,Skin Allergy in Cat,scabies cat,Dog_normal,Dermatitis in Dog,Fungal Infection in Dog,Skin Allergy in Dog,Normal Skin,Lumpy Skin
+Cat_normal,87,2,8,11,0,0,0,0,0,0
+Ringworm in Cat,7,101,12,7,0,0,0,0,0,0
+Skin Allergy in Cat,12,33,61,10,0,0,0,0,0,0
+scabies cat,1,1,3,141,0,0,0,0,0,0
+Dog_normal,0,0,0,0,113,5,0,1,0,0
+Dermatitis in Dog,0,0,0,0,1,86,3,2,0,0
+Fungal Infection in Dog,0,0,0,0,5,1,119,6,0,0
+Skin Allergy in Dog,0,0,0,0,0,2,2,79,0,0
+Normal Skin,0,0,0,0,0,0,0,0,161,6
+Lumpy Skin,0,0,0,0,0,0,0,0,87,135

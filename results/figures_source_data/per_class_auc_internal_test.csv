@@ -1,0 +1,22 @@
+split,model,disease,roc_auc,ci_low,ci_high,support
+internal_test,VetDerm-Mobile,Cat_normal,0.99999139655432,0.9999621392843995,1.0,95
+internal_test,VetDerm-Mobile,Ringworm in Cat,0.9998239211166603,0.9995382818403596,1.0,76
+internal_test,VetDerm-Mobile,Skin Allergy in Cat,0.9999567625996486,0.9998414426889723,1.0,75
+internal_test,VetDerm-Mobile,scabies cat,0.9999898456539399,0.9999450709767296,1.0,80
+internal_test,VetDerm-Mobile,Ear Mites in Cat,0.9964513291169338,0.9869430267118223,1.0,68
+internal_test,VetDerm-Mobile,Eye Infection in Cat,0.9993010201903786,0.9977048080461274,1.0,76
+internal_test,VetDerm-Mobile,Dog_normal,0.99942234309447,0.9986266893591637,0.9999753955174807,97
+internal_test,VetDerm-Mobile,Dermatitis in Dog,0.9878999552497623,0.9715649707526987,0.9990941511125278,118
+internal_test,VetDerm-Mobile,Fungal Infection in Dog,0.9874096143271038,0.9719435059856312,0.9995054770598335,153
+internal_test,VetDerm-Mobile,Hot Spots in Dog,0.9813018624377651,0.9477990373415426,0.9992842303887549,77
+internal_test,VetDerm-Mobile,Mange in Dog,0.9999151744613062,0.9997863735515194,0.9999973553994194,207
+internal_test,VetDerm-Mobile,Ringworm in Dog,0.9978411962931761,0.9958543286290209,0.9994621694745051,168
+internal_test,VetDerm-Mobile,Skin Allergy in Dog,0.9979945369636092,0.9962653154682268,0.9993163206421631,117
+internal_test,VetDerm-Mobile,Tick Infestation in Dog,0.9999841943046811,0.9999405507575004,1.0,77
+internal_test,VetDerm-Mobile,Eye Infection in Dog,0.9997207660493664,0.9991289907097834,1.0,77
+internal_test,VetDerm-Mobile,Normal Skin,0.9957100553871343,0.9922822544510361,0.9983279359451867,276
+internal_test,VetDerm-Mobile,Foot and Mouth disease,0.9998634980307912,0.9996895447290715,0.9999786695572226,190
+internal_test,VetDerm-Mobile,Lumpy Skin,0.9936663607098198,0.9878080333274755,0.998265389676709,264
+internal_test,VetDerm-Mobile,Ringworm(cow),0.9999904235198352,0.9999435775572817,1.0,85
+internal_test,VetDerm-Mobile,scabies cattle,0.9999909371034983,0.9999466889786063,1.0,90
+internal_test,VetDerm-Mobile,papiloma,0.9999893285525249,0.9999510459608432,1.0,76

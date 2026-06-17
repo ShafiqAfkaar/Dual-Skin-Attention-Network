@@ -1,0 +1,75 @@
+{
+  "checkpoint": "vetderm_mobile_results/vetderm_mobile_final_single_384_v7/vetderm_mobile_final_single.pt",
+  "split_root": "/mnt/e/ringworm detection project/dog_normal_finetune_datasets/prepared/combined_split_dirs_v7_no_external_overlap_trainonly",
+  "external_root": "evaluation_data/development_external_2026_05_02",
+  "ood_root": "ood_evaluation/picsum_384",
+  "img_size": 384,
+  "device": "cuda",
+  "ece": [
+    {
+      "split": "val",
+      "n": 3254,
+      "ece": 0.01663794710119646,
+      "accuracy": 0.9665027658266748,
+      "mean_confidence": 0.9792883147471031,
+      "median_confidence": 0.9926741642569337,
+      "brier_top1_surrogate": 0.027160733588488615
+    },
+    {
+      "split": "internal_test",
+      "n": 3259,
+      "ece": 0.01578975545845015,
+      "accuracy": 0.9653267873580853,
+      "mean_confidence": 0.9778564448466508,
+      "median_confidence": 0.9925975415175006,
+      "brier_top1_surrogate": 0.02777580907505655
+    },
+    {
+      "split": "development_external",
+      "n": 1351,
+      "ece": 0.09516579060345076,
+      "accuracy": 0.8023686158401184,
+      "mean_confidence": 0.8744931963054214,
+      "median_confidence": 0.9872022268429343,
+      "brier_top1_surrogate": 0.1406048705719868
+    }
+  ],
+  "domain_gate_threshold": 0.8683895468711853,
+  "domain_gate_target_validation_false_reject_rate": 0.05,
+  "domain_gate": [
+    {
+      "split": "val",
+      "n": 3254,
+      "rejected_n": 163,
+      "reject_rate": 0.05009219422249539,
+      "domain_score_mean": 0.9611279368400574,
+      "domain_score_median": 0.9755858182907104
+    },
+    {
+      "split": "internal_test",
+      "n": 3259,
+      "rejected_n": 151,
+      "reject_rate": 0.04633323105247008,
+      "domain_score_mean": 0.9622755646705627,
+      "domain_score_median": 0.975946307182312
+    },
+    {
+      "split": "development_external",
+      "n": 1351,
+      "rejected_n": 391,
+      "reject_rate": 0.28941524796447077,
+      "domain_score_mean": 0.8968753218650818,
+      "domain_score_median": 0.9511489868164062
+    },
+    {
+      "split": "ood",
+      "n": 75,
+      "rejected_n": 66,
+      "reject_rate": 0.88,
+      "domain_score_mean": 0.7327447533607483,
+      "domain_score_median": 0.7441666126251221
+    }
+  ],
+  "gradcam_correct_n": 10,
+  "gradcam_wrong_n": 10
+}

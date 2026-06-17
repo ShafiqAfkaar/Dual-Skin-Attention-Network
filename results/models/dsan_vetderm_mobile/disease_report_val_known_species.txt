@@ -1,0 +1,27 @@
+                         precision    recall  f1-score   support
+
+             Cat_normal       0.98      0.99      0.98        95
+      Dermatitis in Dog       0.92      0.92      0.92       118
+             Dog_normal       0.97      0.98      0.98       799
+       Ear Mites in Cat       1.00      0.99      0.99        69
+   Eye Infection in Cat       0.99      0.99      0.99        77
+   Eye Infection in Dog       0.99      0.99      0.99        77
+ Foot and Mouth disease       0.99      0.98      0.98       190
+Fungal Infection in Dog       0.92      0.82      0.87       162
+       Hot Spots in Dog       0.96      0.92      0.94        78
+             Lumpy Skin       0.97      0.95      0.96       263
+           Mange in Dog       0.99      1.00      0.99       207
+            Normal Skin       0.94      0.97      0.96       275
+        Ringworm in Cat       0.97      0.99      0.98        77
+        Ringworm in Dog       0.96      0.98      0.97       167
+          Ringworm(cow)       0.98      0.95      0.96        86
+    Skin Allergy in Cat       1.00      0.99      0.99        76
+    Skin Allergy in Dog       0.89      0.92      0.91       116
+Tick Infestation in Dog       1.00      1.00      1.00        77
+               papiloma       0.99      0.96      0.97        76
+            scabies cat       0.99      0.99      0.99        80
+         scabies cattle       0.99      1.00      0.99        89
+
+               accuracy                           0.97      3254
+              macro avg       0.97      0.97      0.97      3254
+           weighted avg       0.97      0.97      0.97      3254

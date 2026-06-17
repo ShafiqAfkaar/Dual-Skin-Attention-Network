@@ -1,0 +1,4 @@
+split,species,macro_f1,n
+internal_test,Cat,0.9848881707035368,470
+internal_test,Cattles,0.9769083164644558,981
+internal_test,Dog,0.9513323689946804,1808

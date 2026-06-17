@@ -1,0 +1,61 @@
+{
+  "split_root": "/mnt/e/ringworm detection project/dog_normal_finetune_datasets/prepared/combined_split_dirs_v7_no_external_overlap_trainonly",
+  "external_root": "evaluation_data/development_external_2026_05_02",
+  "output_dir": "vetderm_mobile_results/vetderm_mobile_pt_384_v7_targetboost_mild_lr5e6_es30",
+  "img_size": 384,
+  "train_policy": "internet_robust",
+  "batch_size": 16,
+  "epochs": 30,
+  "lr": 5e-06,
+  "weight_decay": 0.0001,
+  "label_smoothing": 0.03,
+  "disease_weight": 1.0,
+  "num_workers": 4,
+  "seed": 42,
+  "weighted_sampler": true,
+  "target_class_boost": "Skin Allergy in Cat=2.0,Ringworm in Cat=1.2",
+  "early_stopping_patience": 5,
+  "init_checkpoint": "vetderm_mobile_results/vetderm_mobile_pt_384_v7_safeadd_weighted/vetderm_mobile_pt_best.pt",
+  "no_pretrained": false,
+  "species_names": [
+    "Cat",
+    "Cattles",
+    "Dog"
+  ],
+  "disease_names": [
+    "Cat_normal",
+    "Dermatitis in Dog",
+    "Dog_normal",
+    "Ear Mites in Cat",
+    "Eye Infection in Cat",
+    "Eye Infection in Dog",
+    "Foot and Mouth disease",
+    "Fungal Infection in Dog",
+    "Hot Spots in Dog",
+    "Lumpy Skin",
+    "Mange in Dog",
+    "Normal Skin",
+    "Ringworm in Cat",
+    "Ringworm in Dog",
+    "Ringworm(cow)",
+    "Skin Allergy in Cat",
+    "Skin Allergy in Dog",
+    "Tick Infestation in Dog",
+    "papiloma",
+    "scabies cat",
+    "scabies cattle"
+  ],
+  "train_size": 16618,
+  "val_size": 3254,
+  "test_size": 3259,
+  "external_size": 1351,
+  "device": "cuda",
+  "target_class_boost_by_index": {
+    "15": 2.0,
+    "12": 1.2
+  },
+  "target_class_boost_by_name": {
+    "Skin Allergy in Cat": 2.0,
+    "Ringworm in Cat": 1.2
+  }
+}
