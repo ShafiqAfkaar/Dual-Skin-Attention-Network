@@ -2,6 +2,8 @@
 
 # Dual Skin Attention Network
 
+**Project website:** https://shafiqafkaar.github.io/Dual-Skin-Attention-Network/
+
 ### Lightweight multi-species veterinary dermatology classification and mobile deployment benchmark
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](#installation)
