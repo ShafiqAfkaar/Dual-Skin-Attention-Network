@@ -1,0 +1,11 @@
+true_class,Normal Skin in Cat,Ringworm in Cat,Skin Allergy in Cat,Scabies in Cat,Normal Skin in Dog,Dermatitis in Dog,Fungal Infection in Dog,Skin Allergy in Dog,Normal Skin in Cattle,Lumpy Skin Disease in Cattle,Other model classes,row_total
+Normal Skin in Cat,87,2,8,11,0,0,0,0,0,0,3,111
+Ringworm in Cat,7,101,12,7,0,0,0,0,0,0,4,131
+Skin Allergy in Cat,12,33,61,10,0,0,0,0,0,0,16,132
+Scabies in Cat,1,1,3,141,0,0,0,0,0,0,4,150
+Normal Skin in Dog,0,0,0,0,113,5,0,1,0,0,0,119
+Dermatitis in Dog,0,0,0,0,1,86,3,2,0,0,4,96
+Fungal Infection in Dog,0,0,0,0,5,1,119,6,0,0,2,133
+Skin Allergy in Dog,0,0,0,0,0,2,2,79,0,0,2,85
+Normal Skin in Cattle,0,0,0,0,0,0,0,0,161,6,0,167
+Lumpy Skin Disease in Cattle,0,0,0,0,0,0,0,0,87,135,5,227
