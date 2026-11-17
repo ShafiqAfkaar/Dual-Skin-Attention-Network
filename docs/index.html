@@ -3,31 +3,112 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dual Skin Attention Network: a lightweight multi-species veterinary dermatology classifier and mobile deployment benchmark.">
-  <title>Dual Skin Attention Network · VetDerm-Mobile</title>
+  <meta name="description" content="DSAN: a 7.26 M-parameter species-aware image classifier for 21 skin conditions in cats, cattle and dogs, with TensorFlow Lite exports.">
+  <title>Dual Skin Attention Network (DSAN)</title>
   <style>
-    :root{--ink:#17211e;--muted:#62706b;--cream:#f5f0e7;--paper:#fffdf8;--sage:#759b89;--deep:#174f43;--coral:#e46f51;--gold:#d9a23d;--line:rgba(23,33,30,.14)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit}.wrap{width:min(1160px,calc(100% - 38px));margin:auto}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}.brand{font-weight:850;letter-spacing:-.03em;text-decoration:none}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:.9rem}.navlinks a{text-decoration:none}.navlinks a:hover{color:var(--deep)}
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;min-height:670px;padding:66px 0 80px}.kicker{margin:0 0 18px;color:var(--coral);font-size:.78rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase}h1,h2,h3{line-height:1.08;letter-spacing:-.045em}h1{max-width:760px;margin:0;font-family:Georgia,serif;font-size:clamp(3.4rem,7vw,6.7rem);font-weight:500}h2{margin:0 0 18px;font-family:Georgia,serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:500}h3{margin:0 0 8px;font-size:1.05rem;letter-spacing:-.02em}.lead{max-width:700px;margin:26px 0 32px;color:var(--muted);font-size:1.16rem}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border:1px solid var(--deep);border-radius:999px;font-weight:750;text-decoration:none;transition:.18s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(23,79,67,.16)}.primary{color:white;background:var(--deep)}.secondary{background:rgba(255,255,255,.5)}
-    .visual{position:relative;min-height:440px}.petal{position:absolute;border-radius:50%;filter:drop-shadow(0 22px 28px rgba(23,33,30,.11))}.petal.a{inset:4% 18% 39% 2%;background:var(--deep);transform:rotate(-13deg)}.petal.b{inset:25% 0 12% 29%;background:var(--coral);transform:rotate(18deg)}.petal.c{width:42%;aspect-ratio:1;right:31%;bottom:1%;background:var(--gold)}.visual::after{content:"21 classes · 3 species";position:absolute;right:2%;top:6%;padding:11px 16px;border-radius:999px;background:var(--paper);box-shadow:0 10px 30px rgba(23,33,30,.1);font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-    section{padding:94px 0;border-top:1px solid var(--line)}.intro{max-width:720px;margin:0 0 42px;color:var(--muted);font-size:1.04rem}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{padding:26px;border:1px solid var(--line);border-radius:22px;background:rgba(255,253,248,.7)}.stat strong{display:block;color:var(--deep);font-family:Georgia,serif;font-size:2.3rem;font-weight:500}.stat span{color:var(--muted);font-size:.88rem}
-    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{position:relative;min-height:178px;padding:22px;border-radius:18px;background:var(--paper);border:1px solid var(--line)}.step b{display:block;margin-bottom:38px;color:var(--coral);font:800 .74rem/1 ui-monospace,monospace;letter-spacing:.1em}.step p{margin:0;color:var(--muted);font-size:.88rem}
-    .architecture{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:center}.architecture figure{margin:0;padding:18px;border-radius:24px;background:white;border:1px solid var(--line);box-shadow:0 24px 64px rgba(23,33,30,.09)}.architecture img{display:block;width:100%;height:auto;border-radius:12px}.feature-list{display:grid;gap:16px}.feature{padding:18px 0;border-bottom:1px solid var(--line)}.feature p{margin:5px 0 0;color:var(--muted)}
-    .boundary{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;padding:34px;border-radius:26px;color:white;background:var(--deep)}.boundary h2{font-size:clamp(1.8rem,4vw,3rem)}.boundary p{max-width:750px;margin:0;color:#dbece5}.boundary .tag{padding:12px 16px;border:1px solid rgba(255,255,255,.35);border-radius:999px;white-space:nowrap;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
-    footer{display:flex;justify-content:space-between;gap:20px;padding:34px 0 48px;color:var(--muted);font-size:.88rem}
-    @media(max-width:880px){.hero,.architecture{grid-template-columns:1fr}.visual{min-height:340px}.stats{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.boundary{grid-template-columns:1fr}.tag{justify-self:start}}@media(max-width:540px){.navlinks a:not(:last-child){display:none}.stats,.flow{grid-template-columns:1fr}.hero{min-height:auto;padding-top:50px}section{padding:66px 0}footer{flex-direction:column}}
+    :root{--ink:#17211e;--muted:#5b6964;--cream:#f5f0e7;--paper:#fffdf8;--deep:#174f43;--coral:#c4543a;--line:rgba(23,33,30,.14)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}a{color:var(--deep)}.wrap{width:min(1080px,calc(100% - 32px));margin:auto}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none;color:var(--ink)}.navlinks{display:flex;gap:20px;font-size:.9rem}.navlinks a{text-decoration:none;color:var(--muted)}.navlinks a:hover{color:var(--deep)}
+    .hero{padding:64px 0 56px}.kicker{margin:0 0 14px;color:var(--coral);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}h1,h2,h3{line-height:1.15;letter-spacing:-.03em}h1{max-width:900px;margin:0;font-family:Georgia,serif;font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:500}h2{margin:0 0 16px;font-family:Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:500}h3{margin:0 0 6px;font-size:1.02rem;letter-spacing:-.01em}.lead{max-width:760px;margin:22px 0 28px;color:var(--muted);font-size:1.08rem}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--deep);border-radius:999px;font-weight:700;text-decoration:none}.primary{color:#fff;background:var(--deep)}.secondary{color:var(--deep);background:rgba(255,255,255,.5)}
+    section{padding:72px 0;border-top:1px solid var(--line)}.intro{max-width:760px;margin:0 0 32px;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{padding:22px;border:1px solid var(--line);border-radius:16px;background:rgba(255,253,248,.75)}.stat strong{display:block;color:var(--deep);font-family:Georgia,serif;font-size:2rem;font-weight:500}.stat span{color:var(--muted);font-size:.86rem}.note{margin:18px 0 0;color:var(--muted);font-size:.88rem;max-width:820px}
+    table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.94rem}th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}th{font-weight:700;background:rgba(23,79,67,.06)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}tr:last-child td{border-bottom:0}.tablewrap{overflow-x:auto}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}figure{margin:0;padding:14px;border-radius:18px;background:#fff;border:1px solid var(--line)}figure img{display:block;width:100%;height:auto;border-radius:10px}figcaption{margin-top:10px;color:var(--muted);font-size:.85rem}
+    ul.plain{margin:0;padding-left:20px}ul.plain li{margin:0 0 10px}
+    .limits{padding:30px;border-radius:20px;color:#fff;background:var(--deep)}.limits h2{color:#fff}.limits ul{margin:0;padding-left:20px;color:#dbece5}.limits li{margin:0 0 10px}.limits .kicker{color:#efb39f}
+    footer{display:flex;justify-content:space-between;gap:20px;padding:30px 0 44px;color:var(--muted);font-size:.86rem}
+    @media(max-width:880px){.two{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:540px){.navlinks a:not(:last-child){display:none}.stats{grid-template-columns:1fr}.hero{padding-top:44px}section{padding:52px 0}footer{flex-direction:column}}
   </style>
 </head>
 <body>
-  <header class="wrap"><nav><a class="brand" href="#top">DSAN / VetDerm-Mobile</a><div class="navlinks"><a href="#results">Results</a><a href="#architecture">Architecture</a><a href="https://github.com/ShafiqAfkaar/Dual-Skin-Attention-Network">GitHub ↗</a></div></nav></header>
+  <header class="wrap"><nav><a class="brand" href="#top">DSAN / VetDerm-Mobile</a><div class="navlinks"><a href="#results">Results</a><a href="#decoding">Species decoding</a><a href="#model">Model</a><a href="#deployment">Deployment</a><a href="#limits">Limitations</a><a href="https://github.com/ShafiqAfkaar/Dual-Skin-Attention-Network">GitHub</a></div></nav></header>
   <main id="top">
-    <div class="wrap hero"><div><p class="kicker">Veterinary computer vision · Research release</p><h1>Attention built for every species.</h1><p class="lead">A lightweight multi-species dermatology classifier combining channel–spatial attention, global–local feature fusion, species-assisted decoding, and mobile deployment artifacts.</p><div class="actions"><a class="btn primary" href="https://github.com/ShafiqAfkaar/Dual-Skin-Attention-Network">Explore the repository</a><a class="btn secondary" href="#results">View results</a></div></div><div class="visual" aria-label="Abstract multi-species attention illustration"><span class="petal a"></span><span class="petal b"></span><span class="petal c"></span></div></div>
-    <section id="results"><div class="wrap"><p class="kicker">Manuscript metrics</p><h2>Compact model. Auditable results.</h2><p class="intro">Known-species constrained decoding on cats, cattle, and dogs. The external cohort is an internet-derived development robustness set, not a locked prospective clinical validation cohort.</p><div class="stats"><article class="stat"><strong>97.09%</strong><span>Internal-test disease accuracy</span></article><article class="stat"><strong>97.44%</strong><span>Internal-test macro-F1</span></article><article class="stat"><strong>82.05%</strong><span>Development-external macro-F1</span></article><article class="stat"><strong>9.95 MiB</strong><span>INT8 weight-only TFLite artifact</span></article></div></div></section>
-    <section><div class="wrap"><p class="kicker">Model path</p><h2>Five ideas, one efficient classifier.</h2><div class="flow"><article class="step"><b>01</b><h3>Backbone</h3><p>EfficientNetV2-B0 extracts compact visual representations.</p></article><article class="step"><b>02</b><h3>Channel attention</h3><p>Reweights informative feature channels.</p></article><article class="step"><b>03</b><h3>Spatial attention</h3><p>Highlights lesion-relevant spatial regions.</p></article><article class="step"><b>04</b><h3>Global–local fusion</h3><p>Combines context with localized morphology.</p></article><article class="step"><b>05</b><h3>Dual heads</h3><p>Predicts species and species-assisted disease classes.</p></article></div></div></section>
-    <section id="architecture"><div class="wrap architecture"><div><p class="kicker">Architecture</p><h2>Designed for transparency and deployment.</h2><div class="feature-list"><article class="feature"><h3>Reproducible release</h3><p>Training code, checkpoint metadata, source-data tables, and publication figures are organized for audit.</p></article><article class="feature"><h3>Mobile benchmark</h3><p>PyTorch and TensorFlow Lite artifacts support comparison from research training to compact inference.</p></article><article class="feature"><h3>Explicit boundaries</h3><p>Reported outputs are image-classification candidates—not diagnoses or treatment recommendations.</p></article></div></div><figure><img src="assets/dsan-architecture.png" alt="Dual Skin Attention Network architecture workflow"></figure></div></section>
-    <section><div class="wrap"><div class="boundary"><div><p class="kicker" style="color:#efb39f">Scientific boundary</p><h2>Decision support, not autonomous diagnosis.</h2><p>DSAN/VetDerm-Mobile is a research benchmark and lightweight screening prototype. Veterinary review remains necessary, especially for uncertain, zoonotic, contagious, herd-health, or low-quality submissions.</p></div><span class="tag">Research use</span></div></div></section>
+    <div class="wrap hero">
+      <p class="kicker">Research code and model release</p>
+      <h1>A lightweight species-aware Dual Skin Attention Network for screening support in multi-species veterinary dermatology</h1>
+      <p class="lead">DSAN classifies photographs into 21 skin categories across cats (6), cattle (6) and dogs (9). It is an EfficientNetV2-B0 network with 7.26 M parameters, a species head and a species-assisted disease head. The deployed form is called VetDerm-Mobile; it is the same model exported to TensorFlow Lite.</p>
+      <div class="actions"><a class="btn primary" href="https://github.com/ShafiqAfkaar/Dual-Skin-Attention-Network">Code and model files</a><a class="btn secondary" href="#results">Results</a></div>
+    </div>
+
+    <section id="results"><div class="wrap">
+      <p class="kicker">Results</p>
+      <h2>Internal test and development external cohort</h2>
+      <p class="intro">All values use known-species decoding, where the host species is supplied with the image. Internal test: 3,259 images, 21 classes. Development external cohort: 1,351 internet-derived images that cover 10 of the 21 classes.</p>
+      <div class="stats">
+        <article class="stat"><strong>96.53%</strong><span>Internal test disease accuracy</span></article>
+        <article class="stat"><strong>96.82%</strong><span>Internal test macro-F1 (21 classes)</span></article>
+        <article class="stat"><strong>80.16%</strong><span>Development external accuracy</span></article>
+        <article class="stat"><strong>82.05%</strong><span>Development external macro-F1 (10 classes)</span></article>
+      </div>
+      <div class="tablewrap" style="margin-top:24px"><table>
+        <thead><tr><th>Set</th><th class="num">n</th><th class="num">Accuracy</th><th class="num">Macro-F1</th><th class="num">Top-3</th><th class="num">Species accuracy</th></tr></thead>
+        <tbody>
+          <tr><td>Validation</td><td class="num">3,254</td><td class="num">96.65%</td><td class="num">96.77%</td><td class="num">99.39%</td><td class="num">99.51%</td></tr>
+          <tr><td>Internal test</td><td class="num">3,259</td><td class="num">96.53%</td><td class="num">96.82%</td><td class="num">99.11%</td><td class="num">99.48%</td></tr>
+          <tr><td>Development external</td><td class="num">1,351</td><td class="num">80.16%</td><td class="num">82.05%</td><td class="num">95.04%</td><td class="num">84.16%</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">The external macro-F1 is averaged over the 10 classes present in that cohort, so it is not comparable with the 21-class internal value. The external cohort was used during model development. It measures robustness to internet photographs; it is not an independent or prospective validation.</p>
+    </div></section>
+
+    <section id="decoding"><div class="wrap">
+      <p class="kicker">Species decoding</p>
+      <h2>What the species information does</h2>
+      <p class="intro">The model can decode in three ways. Disease-only takes the best of all 21 classes. Predicted-species keeps only the classes of the species that the model itself predicts. Known-species keeps only the classes of the species supplied with the image.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Decoding mode (development external, n = 1,351)</th><th class="num">Accuracy</th></tr></thead>
+        <tbody>
+          <tr><td>Disease-only</td><td class="num">71.58%</td></tr>
+          <tr><td>Predicted-species</td><td class="num">70.69%</td></tr>
+          <tr><td>Known-species</td><td class="num">80.16%</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Known-species decoding adds 8.59 percentage points. This gain comes from removing classes that are not possible for the given species. The weights and logits do not change, so it is not better visual recognition, and it depends on correct species metadata. Predicted-species decoding is slightly worse than disease-only, because the species head is wrong on about one in six external images. On the validation and internal test sets, the three modes differ by less than 0.7 percentage points.</p>
+    </div></section>
+
+    <section id="model"><div class="wrap two">
+      <div>
+        <p class="kicker">Model</p>
+        <h2>Architecture</h2>
+        <ul class="plain">
+          <li><b>Backbone.</b> EfficientNetV2-B0 (ImageNet pre-trained), 384 × 384 RGB input.</li>
+          <li><b>Attention.</b> A channel gate followed by a 7 × 7 spatial gate on the last feature map.</li>
+          <li><b>Fusion.</b> A 128-d global branch and a 64-d local convolutional branch, joined to 192-d.</li>
+          <li><b>Heads.</b> A species head. Its 64-d features are joined to the fused features (256-d) for the 21-class disease head.</li>
+        </ul>
+        <h3 style="margin-top:26px">Ablation (three seeds)</h3>
+        <p style="margin:0;color:var(--muted)">Removing the local branch reduced internal macro-F1 by 8.75 percentage points. The three attention variants (no attention, channel only, spatial only) and removing the global branch gave no significant change.</p>
+        <h3 style="margin-top:22px">Backbone comparison</h3>
+        <p style="margin:0;color:var(--muted)">At a common learning rate on a reviewer-clean split (internal test n = 2,392), DSAN had the highest accuracy (96.74%) and macro-F1 (97.13%) with 7.26 M parameters, against 27.7 M for Swin-Tiny, 28.0 M for ConvNeXt V2-Tiny and 86.2 M for ViT-B/16. The difference was significant against ViT-B/16 and a plain EfficientNetV2-B0, but not against Swin-Tiny or ConvNeXt V2-Tiny. With a tuned learning rate per model, DSAN (96.66 ± 0.08%) and Swin-Tiny (96.67 ± 0.02%) were similar.</p>
+      </div>
+      <figure><img src="assets/dsan-architecture.png" alt="DSAN architecture: EfficientNetV2-B0 backbone, channel and spatial attention, global and local branches, species head and species-assisted disease head"><figcaption>DSAN architecture.</figcaption></figure>
+    </div></section>
+
+    <section id="deployment"><div class="wrap">
+      <p class="kicker">Deployment</p>
+      <h2>TensorFlow Lite exports</h2>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Export</th><th class="num">File size</th></tr></thead>
+        <tbody>
+          <tr><td>FP32 reference</td><td class="num">27.81 MiB</td></tr>
+          <tr><td>FP16</td><td class="num">15.57 MiB</td></tr>
+          <tr><td>INT8 weight-only (recommended)</td><td class="num">9.95 MiB</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">The INT8 weight-only export keeps 81.87% development external macro-F1 (PyTorch: 82.05%). It agrees with the PyTorch predictions on 99.69% of internal test images and 98.82% of external images. Latency was about 40.5 ms per image on a desktop CPU (WSL, XNNPACK). This is not a phone measurement; measure latency on the target device before use. The INT8 file uses weight-only post-training quantization, not calibrated full-integer quantization.</p>
+    </div></section>
+
+    <section id="limits"><div class="wrap"><div class="limits">
+      <p class="kicker">Limitations</p>
+      <h2>Screening support only</h2>
+      <ul>
+        <li>DSAN is a research prototype. It does not give a diagnosis or a treatment recommendation, and it does not replace a veterinary examination or laboratory tests.</li>
+        <li>Labels were reviewed under veterinary supervision. Most were not confirmed by histopathology, culture, PCR, skin scraping or cytology.</li>
+        <li>The external cohort was used during development and covers only 10 of the 21 classes. The results do not show generalisation to all classes or to clinical use.</li>
+        <li>Grad-CAM maps were used only as a visual check. They do not show that the model looks at the lesion.</li>
+        <li>Image data are not redistributed, because redistribution rights could not be established. The repository gives the manifests, prediction files and figure source data.</li>
+      </ul>
+    </div></div></section>
   </main>
-  <footer class="wrap"><span>Dual Skin Attention Network · 2026 research release</span><span><a href="https://github.com/ShafiqAfkaar/Dual-Skin-Attention-Network">Source code and reproducibility</a></span></footer>
+  <footer class="wrap"><span>Dual Skin Attention Network (DSAN) · 2026</span><span><a href="https://github.com/ShafiqAfkaar/Dual-Skin-Attention-Network">Source code and reproduction steps</a></span></footer>
 </body>
 </html>
